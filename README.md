@@ -266,14 +266,3 @@ For production deployment:
 * Use Gunicorn or Waitress
 * Store secrets securely
 
----
-
-# Author
-
-Developed as a Flask + Machine Learning integration project for loan eligibility prediction.
-
----
-
-# License
-
-This project is open-source and available under the MIT License.
