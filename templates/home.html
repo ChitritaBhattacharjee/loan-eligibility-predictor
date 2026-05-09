@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to Loan Eligibility System</h1>
+    <p style="text-align: center;">Please login or register to use the system.</p>
+
+    <div style="text-align: center;">
+        <a class="button" href="{{ url_for('login') }}">Login</a>
+    </div>
+    <div style="text-align: center;">
+        <a class="button" href="{{ url_for('register') }}">Register</a>
+    </div>
+</body>
+</html>

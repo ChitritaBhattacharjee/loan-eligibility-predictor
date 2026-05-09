@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <title>Loan Eligibility</title>
+</head>
+<body>
+    <h1>Predict Loan Eligibility</h1>
+    <p>Please enter the details in order to check your house loan eligibility</p>
+
+    <div>
+        <form action="{{url_for('predict')}}" method="post">
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="Gender">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select><br><br>
+            <label for="married">Married:</label><br>
+            <select id="married" name="Married">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br><br>
+            <label for="dependents">Dependents:</label><br>
+            <input type="number" id="dependents" name="Dependents"><br><br>
+            <label for="education">Education:</label><br>
+            <select id="education" name="Education">
+                <option value="1">Graduate</option>
+                <option value="0">Not Graduate</option>
+            </select><br><br>
+            <label for="self_employed">Self Employed:</label><br>
+            <select id="self_employed" name="Self_Employed">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br><br>
+            <label for="applicant_income">Applicant Income ($):</label><br>
+            <input type="number" id="applicantincome" name="applicantincome"><br><br>
+            <label for="coapplicant_income">Coapplicant Income:</label><br>
+            <input type="number" id="coapplicantincome" name="coapplicantincome"><br><br>
+            <label for="loan_amount">Loan Amount: ($)</label><br>
+            <input type="number" id="loanamount" name="loanamount"><br><br>
+            <label for="loan_amount_term">Loan Amount Term (months):</label><br>
+            <input type="number" id="loanamountterm" name="loanamountterm"><br><br>
+            <label for="credit_history">Credit History:</label><br>
+            <select id="credit_history" name="credit_history">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br><br>
+            <label for="property_area">Property Area:</label><br>
+            <select id="property_area" name="property_area">
+                <option value="0">Urban</option>
+                <option value="1">Semiurban</option>
+                <option value="2">Rural</option>
+            </select><br><br>
+            <input class="button" type="submit" value="Predict">
+            <br><br>
+            <h3>{{ prediction_text }}</h3>
+            <br><br>
+            <a class="button" href="{{ url_for('logout') }}">Logout</a>
+        </form>
+    </div>
+</body>
+</html>
